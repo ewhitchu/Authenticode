@@ -4,7 +4,7 @@
 RootModule = 'Authenticode.psm1'
 
 # Version number of this module.
-ModuleVersion = '2.7'
+ModuleVersion = '2.7.1'
 
 # ID used to uniquely identify this module
 GUID = '4a14168f-41b8-4bc4-9ebf-83d5e6b84476'

@@ -348,12 +348,14 @@ function Set-AuthCodeSignature {
             Write-Verbose "Set Authenticode Signature on $FilePath with $($Certificate | Out-String)"
             $null = $PSBoundParameters.Remove("ModuleBase")
             Microsoft.PowerShell.Security\Set-AuthenticodeSignature @PSBoundParameters
+            Start-Sleep -Seconds 20
          }
          else {
             $PSBoundParameters.FilePath = Get-ChildItem $file -Recurse |
             Where-Object { !$_.PsIsContainer -and (".ps1", ".psm1", ".psd1", ".ps1xml", ".dll", ".exe" -contains $_.Extension) } | 
             Select-Object -Expand FullName
             Microsoft.PowerShell.Security\Set-AuthenticodeSignature @PSBoundParameters
+            Start-Sleep -Seconds 20
          }
       }
       return
